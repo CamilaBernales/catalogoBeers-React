@@ -14,18 +14,28 @@ const Cards = () => {
         <div className={styles.container}>
 
             <Grid
-                continainer
+                container
                 justify='center'
                 direction="row"
-                container
                 alignItems="center"
             >
 
                 {beers.map(beer => (
                     <Grid item xs={15} md={3} component={Card} className={styles.card}>
+                        <CardMedia
+                            className={styles.imagen}
+                            component="img"
+                            alt="beer"
+                            image={beer.image_url}
+                            title="beer"
+                        />
                         <CardContent>
-                            <img className={styles.imagen} src={beer.image_url} />
-                            <Typography align="center" variant="h5" color='secondary'>{beer.name}</Typography>
+                            <Typography gutterBottom variant="h5" component="h2">
+                                {beer.name}
+                            </Typography>
+                            <Typography variant="body2" color="textSecondary" component="p">
+                                {beer.description}
+                            </Typography>
                         </CardContent>
                     </Grid>
 
