@@ -21,7 +21,7 @@ const Cards = () => {
             >
 
                 {beers.map(beer => (
-                    <Grid item xs={15} md={3} component={Card} className={styles.card}>
+                    <Grid item xs={9} md={3} key={beer.id}  component={Card} className={styles.card}>
                         <CardMedia
                             className={styles.imagen}
                             component="img"
